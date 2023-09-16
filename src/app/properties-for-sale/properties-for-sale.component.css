@@ -1,0 +1,19 @@
+.background-secondary{
+    background-color:#6c757d;
+}
+h1, h2, h3, h4, h5, h6, span{
+    color: white;
+}
+.blue1 { background: rgb(182, 185, 185); }
+.btn {
+    color: #FFFFFF;
+}
+img{
+    height: 300px;
+}
+@media screen and (max-width: 480px) {
+img {
+        height: 200px;
+        overflow: hidden;
+    }
+}

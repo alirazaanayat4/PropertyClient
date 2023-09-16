@@ -1,0 +1,43 @@
+<div class="spacing">
+<h1 class="display-4 d-flex justify-content-center">Create an Account</h1>
+<form class="col white" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(Fullname.value,email.value,phone.value,Password.value)">
+    <div class="row">
+      <div class="input-field col s6">
+          <label>Full Name</label>
+        <input class="validate" type="text" name="Full Name" #Fullname required>
+        <label data-error="Required field!">Full Name</label>
+      </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <label>Email</label>
+          <input class="validate" type="email" name="email" #email required >
+          <label>Email</label>
+        </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <label>Phone</label>
+        <input class="validate" type="text" name="phone" #phone required >
+        <label>Phone</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+          <label>Password</label>
+        <input class="validate" type="password" name="Password" #Password required  minlength="7">
+        <label>Password</label>
+      </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12 d-flex justify-content-center">
+          <button [disabled]="!userRegistrationForm.valid" class="btn-large {{service.theme.button}} btn-submit" type="submit">Create</button>
+        </div>
+      </div>
+</form>
+<li class="tab">
+    <a routerLink='/login'>Already have an account!!</a>
+  </li>
+</div>
+
+<!------------------------------------------------------------------------------->

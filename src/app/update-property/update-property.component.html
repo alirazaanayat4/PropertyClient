@@ -1,0 +1,46 @@
+<!-- <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Loading... </p>  
+</ngx-spinner> -->
+<h1 class="display-4 d-flex justify-content-center">Update Property</h1>
+<form novalidate class="spacing" autocomplete="off" #form="ngForm" (submit)="onSubmit()">
+        <div class="form-group">
+            <label>Location</label>
+            <input class="form-control form-control-sm" type="text" placeholder="Location" name="Location"
+                #ID="ngModel" [(ngModel)]="updateProperty.location"
+                required>
+        </div>
+        <!-- <div class="form-group">
+            <label>Pin Your Updated Location</label>
+            <agm-map [zoom]="15" [latitude]="updateProperty.latitude" [longitude]="updateProperty.longitude"
+            (mapClick)="onChooseLocation($event.coords.lat, $event.coords.lng)">
+                <agm-marker [latitude]="updateProperty.latitude" [longitude]="updateProperty.longitude"></agm-marker>
+            </agm-map>
+        </div> -->
+        <div class="form-group">
+            <label>Property Title</label>
+            <input class="form-control form-control-sm" type="text" placeholder="Title" name="Title"
+                #ID="ngModel" [(ngModel)]="updateProperty.title"
+                required>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control form-control-sm" name="Description" rows="3"
+                #ID="ngModel" [(ngModel)]="updateProperty.description"
+                required></textarea>
+        </div>
+        <div class="form-group">
+            <label>Land Area</label>
+            <input class="form-control form-control-sm" type="text" placeholder="Area" name="Area"
+                #ID="ngModel" [(ngModel)]="updateProperty.area"
+                required>
+        </div>
+        <div class="form-group">
+            <label>Price</label>
+            <input class="form-control form-control-sm" type="number" placeholder="Price" name="Price"
+                #ID="ngModel" [(ngModel)]="updateProperty.price"
+                required>
+        </div>
+    <div class="form-group">
+      <button class="btn btn-sm btn-block bg-secondary" [disabled]="!form.valid" type="submit">Update</button>
+  </div>
+  </form>

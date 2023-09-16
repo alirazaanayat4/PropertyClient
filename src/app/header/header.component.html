@@ -1,0 +1,26 @@
+<mat-toolbar>
+  <button class="border-0 d-flex header-icon-button" [matMenuTriggerFor]="menu" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button class="menu-button" mat-menu-item>
+      <span routerLink="/properties-for-sale">Properties For Sale</span>
+    </button>
+    <button *ngIf="service.checkLogin" class="menu-button" mat-menu-item>
+      <span routerLink="/addProperty">Add a Property</span>
+    </button>
+    <button *ngIf="service.checkLogin" class="menu-button" mat-menu-item>
+      <span routerLink="/delete-property">Remove Property</span>
+    </button>
+    <button *ngIf="service.checkLogin" class="menu-button" mat-menu-item>
+      <span routerLink="/change-password">Change Password</span>
+    </button>
+    <button *ngIf="service.checkLogin" class="menu-button" mat-menu-item>
+      <span routerLink="/update-profile">Update Profile</span>
+    </button>
+  </mat-menu>
+  <span class="ml-2">The Real Estate</span>
+  <span class="example-spacer"></span>
+  <span class="pointer pr-2 fw-light fs-6" *ngIf="!service.checkLogin" routerLink="/login">Login</span>
+  <span class="pointer pr-2 fw-light fs-6" *ngIf="service.checkLogin" (click)="Logout()">Logout</span>
+</mat-toolbar>

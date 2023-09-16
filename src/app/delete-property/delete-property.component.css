@@ -1,0 +1,10 @@
+thead th{
+    font-weight: 400;
+  }
+  
+  table tr:hover {
+    background-color: #e7e3ec;
+  }
+  i:hover{
+    cursor: pointer;
+  }

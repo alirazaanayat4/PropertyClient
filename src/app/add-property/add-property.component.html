@@ -1,0 +1,39 @@
+<!-- <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Adding... </p>  
+</ngx-spinner> -->
+<h1 class="display-4 d-flex justify-content-center">Add a Property</h1>
+<div class="form-group">
+    <label>Location</label>
+    <input class="form-control form-control-sm" type="text" placeholder="Location" name="Location" [(ngModel)]="propertyForSale.location" required>
+</div>
+<!-- <div class="form-group">
+    <label>Pin Your Location</label>
+    <agm-map [zoom]="10" [latitude]="lat" [longitude]="lng" (mapClick)="onChooseLocation($event.coords.lat, $event.coords.lng)">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+</div> -->
+<div class="form-group">
+  <label>Property Title</label>
+  <input class="form-control form-control-sm" type="text" placeholder="Title" name="Title" [(ngModel)]="propertyForSale.title" required>
+</div>
+<div class="form-group">
+  <label>Description</label>
+  <textarea class="form-control form-control-sm" name="Description" rows="3" [(ngModel)]="propertyForSale.description" required></textarea>
+</div>
+<div class="form-group">
+    <label>Add Images</label>
+    <input 
+    class="form-control" id="file" type="file" class="form-control" multiple="" (change)="onFileChange($event)">
+</div>
+<img *ngFor='let url of images'  [src]="url" height="150" width="200px" style="margin: 3px;"> <br/>
+<div class="form-group">
+  <label>Land Area With Units</label>
+  <input class="form-control form-control-sm" type="text" placeholder="Area" name="Area" [(ngModel)]="propertyForSale.area" required>
+</div>
+<div class="form-group">
+  <label>Price In PKR</label>
+  <input class="form-control form-control-sm" type="number" placeholder="Price" name="Price" [(ngModel)]="propertyForSale.price" required>
+</div>
+<div class="form-group">
+  <button class="btn btn-sm btn-block bg-secondary text-white" type="submit" (click)="onSubmit()">Add</button>
+</div>

@@ -1,0 +1,72 @@
+<div class="list-group" *ngFor="let property of service.propertiesForSaleList,let i = index">
+    <li class="list-group-item border-0" style="margin: 0%;padding: 0%;">
+        <div class="card mb-3 border-0 shadow-none" style="max-width: 100%;border-radius: 2%;">
+            <div class="row background-secondary no-gutters">
+              <div class="col-md-4 d-flex justify-content-center" style="overflow: hidden;">
+                <img
+                src="https://img.staticmb.com/mbcontent/images/uploads/2022/12/Most-Beautiful-House-in-the-World.jpg">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <h3 class="Lead"> {{ property.title }} </h3>
+                    <h5 class="card-title"> PKR {{ property.price }}</h5>
+                    <h5 class="car-text" style="display:block;width:
+                    auto;overflow: hidden; white-space:
+                    nowrap;">{{ property.location }}</h5>
+                    <h6 class="card-title"> {{ property.area }}</h6>
+                    <span class="card-text" style="display:block;width:
+                    auto;overflow: hidden; white-space:
+                    nowrap;">{{ property.description }}</span>
+                    <div class="row">
+                        <div class="col justify-content-center">
+                            <button *ngIf="service.checkLogin" type="button" class="btn" 
+                            style="background-color: rgb(5, 197, 85);margin: 1%;"
+                            (click)="update(property.id)">Update</button>
+                            <button *ngIf="service.checkLogin" type="button" class="btn" 
+                            style="background-color: red; color: white;margin: 1%;" 
+                            (click)="delete(property.id)">
+                                <i style="margin-top: -2px;" class="far fa-trash-alt fa-sm"></i>
+                            </button>
+                            <button type="button" class="btn bg-secondary" 
+                            style="margin: 1%;" (click)="View(property.id)">View</button>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!--<div class="row {{service.theme.listItem }} rounded flex-grow-1">
+            <div class="col-6 d-flex justify-content-center">
+             <div class="container">
+                <img
+                [src]="'data:image/jpg;base64,' +service.PropertyGetData[i].imagesCollection[0].Data">
+            </div>
+            </div> 
+            <div class="col-6 paddings">
+                <div class="card-block">
+                    <h3 class="Lead"> {{ property.title }} </h3>
+                    <h5 class="card-title"> PKR {{ property.price }}</h5>
+                    <h5 class="card-title" style="display:block;width:
+                    auto;overflow: hidden; white-space:
+                    nowrap;">>{{ property.location }}</h5>
+                    <h6 class="card-title"> {{ property.area }}</h6>
+                    <span class="card-title" style="display:block;width:
+                    auto;overflow: hidden; white-space:
+                    nowrap;">>{{ property.description }}</span>
+                    <div class="row">
+                        <div class="col-sm-6" *ngIf="service.checkLogin">
+                            <button *ngIf="service.checkLogin" type="button" class="btn" 
+                            style="background-color: red; color: white;width: 100%;margin: 2%;" (click)="delete(property.ID)">
+                                <i class="far fa-trash-alt fa-lg"> Delete </i>
+                            </button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" class="btn {{ service.theme.button }}" style="width:100%;margin: 2%;" 
+                            (click)="View(property.ID)">View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </li>
+</div>
