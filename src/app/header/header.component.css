@@ -1,9 +1,6 @@
 :host ::ng-deep .mat-toolbar {
-    background-color: #6c757d!important;
+    background-color: #6c757d !important;
     color: white;
-}
-:host ::ng-deep .mat-menu-content:not(:empty){
-    padding-top: 0px;
 }
 .header-icon-button{
     background-color: transparent;
@@ -12,17 +9,17 @@
     background-color: transparent;
 }
 .header-icon-button:hover{
-    background-color: #95979a!important;
+    background-color: #95979a !important;
     cursor: pointer;
     border-radius: 10px;
 }
 .menu-button{
     color: white;
-    background-color: #6c757d!important;
+    background-color: #6c757d !important;
 }
 .menu-button:hover{
     color: white;
-    background-color: #95979a!important;
+    background-color: #95979a !important;
 }
 .example-spacer {
     flex: 1 1 auto;
