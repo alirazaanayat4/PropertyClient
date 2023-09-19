@@ -1,5 +1,6 @@
 import { Routes } from "@angular/router";
 import { AddPropertyComponent } from "./add-property/add-property.component";
+import { AuthGuard } from "./auth-guard/auth.guard";
 import { ChangePasswordComponent } from "./change-password/change-password.component";
 import { DeletePropertyComponent } from "./delete-property/delete-property.component";
 import { ForgotPasswordComponent } from "./forgot-password/forgot-password.component";
@@ -13,7 +14,7 @@ import { ViewPropertyComponent } from "./view-property/view-property.component";
 
 export const appRoutes: Routes = [
     {
-        path: 'addProperty', component: AddPropertyComponent
+        path: 'addProperty', component: AddPropertyComponent, canActivate: [AuthGuard]
     },
     {
         path: 'properties-for-sale', component: PropertiesForSaleComponent
@@ -22,16 +23,16 @@ export const appRoutes: Routes = [
         path: 'view-property', component: ViewPropertyComponent
     },
     {
-        path: 'delete-property', component: DeletePropertyComponent,
+        path: 'delete-property', component: DeletePropertyComponent, canActivate: [AuthGuard]
     },
     {
-        path: 'update-property', component: UpdatePropertyComponent,
+        path: 'update-property', component: UpdatePropertyComponent, canActivate: [AuthGuard]
     },
     {
-        path: 'change-password', component: ChangePasswordComponent
+        path: 'change-password', component: ChangePasswordComponent, canActivate: [AuthGuard]
     },
     {
-        path: 'update-profile', component: UpdateProfileComponent,
+        path: 'update-profile', component: UpdateProfileComponent, canActivate: [AuthGuard]
     },
     {
         path: 'register', component: RegisterComponent
@@ -40,10 +41,10 @@ export const appRoutes: Routes = [
         path: 'login', component: LoginComponent
     },
     {
-        path: 'resetPassword', component: ResetPasswordComponent
+        path: 'resetPassword', component: ResetPasswordComponent, canActivate: [AuthGuard]
     },
     {
-        path: 'forgot-password', component: ForgotPasswordComponent
+        path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [AuthGuard]
     },
     { path : '', redirectTo:'/properties-for-sale', pathMatch : 'full'}
 ];

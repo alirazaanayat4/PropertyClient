@@ -22,6 +22,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule, MatMenuModule, MatToolbarModule } from '@angular/material';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { AuthGuard } from './auth-guard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     MatIconModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
